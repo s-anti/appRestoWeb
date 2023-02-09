@@ -1,20 +1,22 @@
 "use client";
-
-import { SSRProvider } from "@react-aria/ssr";
+import { MantineProvider } from "@mantine/core";
 
 export default function RootLayout({ children }) {
   return (
-    <SSRProvider>
+    <MantineProvider
+      withGlobalStyles
+      withNormalizeCSS
+      theme={{
+        /** Put your mantine theme override here */
+        colorScheme: "dark",
+      }}
+    >
       <html lang="es">
         <head />
-        <body
-          style={{
-            fontFamily: "var(--nextui-fonts-sans)",
-          }}
-        >
+        <body>
           <main>{children}</main>
         </body>
       </html>
-    </SSRProvider>
+    </MantineProvider>
   );
 }

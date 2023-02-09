@@ -1,24 +1,30 @@
 "use client";
 import React from "react";
-import { Button, Text } from "@nextui-org/react";
+import { Button } from "@mantine/core";
 import Link from "next/link";
 
 export default function HomePage() {
   return (
     <div>
-      <Text h1>Esto es el homepage</Text>
-      <Text h2>
+      <h1>Esto es el homepage</h1>
+      <h2>
         Acá podemos poner info de nosotros, pero el cliente del restaurant no lo
         vería
-      </Text>
-      <Text h2>
+      </h2>
+      <h2>
         Por ahora los mandamos al restaurant prueba con un link, pero tendría
         que abrirse con el QR
-      </Text>
+      </h2>
 
-      <Link href={"/prueba2"}>
-        <Button>hola</Button>
-      </Link>
+      <Button
+        component="a"
+        href="/prueba2"
+        variant="light"
+        color="cyan"
+        radius="xl"
+      >
+        Hpñla
+      </Button>
     </div>
   );
 }
